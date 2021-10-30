@@ -1,0 +1,24 @@
+These are the queries that I ran in pgAdmin 4
+
+CREATE TABLE IF NOT EXISTS public."raw"
+(
+    nameid integer,
+    first_name text,
+    last_name text,
+    birth_date date,
+    email text,
+    address text,
+    credit_card_type text,
+    credit_card_number text,
+    PRIMARY KEY (nameid)
+);
+
+ALTER TABLE public."raw"
+    OWNER to postgres;
+
+
+
+CREATE TABLE clean AS
+	SELECT * 
+	FROM raw
+	WHERE email LIKE '%.gov' OR email LIKE '%.edu';
