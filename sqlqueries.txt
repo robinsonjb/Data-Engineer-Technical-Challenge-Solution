@@ -1,4 +1,4 @@
-These are the queries that I ran in pgAdmin 4
+These are the queries that I ran in pgAdmin 4 to create the raw and clean tables. PgAdmin 4 has an import function which allows for easy importing of csv data once the has been created
 
 CREATE TABLE IF NOT EXISTS public."raw"
 (
@@ -21,4 +21,4 @@ ALTER TABLE public."raw"
 CREATE TABLE clean AS
 	SELECT * 
 	FROM raw
-	WHERE email LIKE '%.gov' OR email LIKE '%.edu';
+	WHERE birth_date >'01/01/1995' OR email LIKE '%.edu';
