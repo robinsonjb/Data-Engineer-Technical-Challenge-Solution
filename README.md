@@ -8,3 +8,17 @@ As I was using postgresql, I used pgAdmin 4 to create the tables raw and clean a
 To clean the data, I chose to filter by who had .edu email or was under the age of 25. I chose this criteria as these are people in my experience are pretty new to credit.
 I included the input statement to give more flexiblity to user when requesting a query.
 In the display, I chose only to show the last 4 digits of the card to add a layer of security.
+
+The data types for tables were as follows
+
+  nameid integer,
+  first_name text,
+  last_name text,
+  birth_date date,
+  email text,
+  address text,
+  credit_card_type text,
+  credit_card_number text,
+  PRIMARY KEY (nameid)
+  
+  As memory was not a major concern, the text datatypes were suitable for this dataset. If the dataset were much larger, I would change the datatype of first_name, last_name and credit_card_type to char to save storage space. Credit_card_number data type would remain as text as there wouldnt be any multiplication or division on the CC number.
